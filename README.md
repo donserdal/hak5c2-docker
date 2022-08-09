@@ -31,7 +31,7 @@ services:
       - c2reverseProxy=True
       - c2reverseProxyPort=443
       - c2sshport=22
-    image: donserdal/Hak5C2
+    image: donserdal/hak5c2
 volumes:
   hak5c2-data:
 ```
@@ -41,5 +41,5 @@ volumes:
 Below an example of a docker command to run the image:
 
 ```sh
-docker run --name hak5c2 -d -p 8080:8080/tcp -p 2022:2022 -v "$(pwd)"/data:/hak5/data -e 'c2hostname=c2.example.com' donserdal/Hak5C2
+docker run --name hak5c2 -d -p 8080:8080/tcp -p 2022:2022 -v "$(pwd)"/data:/hak5/data -e 'c2hostname=c2.example.com' donserdal/hak5c2
 ```
