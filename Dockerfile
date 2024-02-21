@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.19
 # Set variables and defaults
 LABEL org.opencontainers.image.authors="Serdal Ozkan <donserdal@hotmail.com>"
 
