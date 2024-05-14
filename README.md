@@ -7,7 +7,6 @@ Latest Alpine image with the latest Hak5C2 software.
 Below an example of a docker compose file
 
 ```yaml
-version: '3'
 services:
   Hak5C2:
     container_name: Hak5C2
