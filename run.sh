@@ -50,8 +50,22 @@ if ! [ -z "$c2sshport" ]; then
     c2sshport="-sshport $c2sshport"
 fi
 
+# Set License Settings
+if ! [ -z "$c2licedition" ]; then
+    c2licedition="-setEdition $c2licedition"
+fi
+
+if ! [ -z "$c2lickey" ]; then
+    c2lickey="-setLicenseKey $c2lickey"
+fi
+
+# NoBanner setting -nobanner
+
+if ! [ -z "$c2nobanner" ]; then
+    c2nobanner="-nobanner"
+fi
 
 # Start application and note the settings used
 echo "Starting with:" $c2hostname $c2certFile $c2db $c2https $c2keyFile $c2listenip $c2listenport $c2reverseProxy $c2reverseProxyPort $c2sshport
 
-/hak5/c2-latest $c2hostname $c2certFile $c2db $c2https $c2keyFile $c2listenip $c2listenport $c2reverseProxy $c2reverseProxyPort $c2sshport
+/hak5/c2-latest $c2hostname $c2certFile $c2db $c2https $c2keyFile $c2listenip $c2listenport $c2reverseProxy $c2reverseProxyPort $c2sshport $c2licedition $c2lickey $c2nobanner
