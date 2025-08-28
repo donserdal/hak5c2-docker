@@ -35,11 +35,19 @@ USER ${USER}
 RUN wget -q https://c2.hak5.org/download/latest -O cloudc2.zip \
     && unzip cloudc2.zip \
     && find . -type f ! -name '*amd64_linux' -delete \
-    && mv c2*_amd64_linux c2-latest \
-    && apk del --no-cache unzip
+    && mv c2*_amd64_linux c2-latest
 
 # Copy run file to container
 COPY run.sh /hak5
+
+# Change user to root for cleanup
+USER root
+
+# Clean up commands
+RUN apk del --no-cache unzip
+
+# Change user back to defined user
+USER ${USER}
 
 # Define Healthcheck, curl's localhost to see if it still serves a page
 HEALTHCHECK --interval=1m --timeout=5s --start-period=5s\
