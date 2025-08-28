@@ -35,7 +35,8 @@ USER ${USER}
 RUN wget -q https://c2.hak5.org/download/latest -O cloudc2.zip \
     && unzip cloudc2.zip \
     && find . -type f ! -name '*amd64_linux' -delete \
-    && mv c2*_amd64_linux c2-latest && apk del --no-cache unzip
+    && mv c2*_amd64_linux c2-latest \
+    && apk del --no-cache unzip
 
 # Copy run file to container
 COPY run.sh /hak5
