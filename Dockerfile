@@ -1,6 +1,6 @@
-FROM alpine:3.22
+FROM alpine:3.24
 # Set variables and defaults
-LABEL org.opencontainers.image.authors="Serdal Ozkan <donserdal@hotmail.com>"
+LABEL org.opencontainers.image.authors="Serdal Ozkan <hak5c2-docker@spam-me-niet.nl>"
 
 ENV HKHostname=${hostname}
 ENV USER=hak5
