@@ -32,7 +32,7 @@ WORKDIR /hak5
 USER ${USER}
 
 # Download latest c2 binary, unzip, remove all but the needed files and rename latest to latest
-RUN wget -q https://c2.hak5.org/download/latest -O cloudc2.zip \
+RUN wget -q https://downloads.hak5.org/api/devices/cloudc2/firmwares/3.5.2-stable -O cloudc2.zip \
     && unzip cloudc2.zip \
     && find . -type f ! -name '*amd64_linux' -delete \
     && mv c2*_amd64_linux c2-latest
